@@ -1,6 +1,6 @@
 export const fetchWeatherApi = async (token, city, country, units) => {
 	return await fetch(
-		`http://localhost:5000/weather?city=${encodeURIComponent(
+		`https://warm-ocean-58267.herokuapp.com/weather?city=${encodeURIComponent(
 			city
 		)}&country=${encodeURIComponent(country)}&units=${encodeURIComponent(
 			units
@@ -14,7 +14,7 @@ export const fetchWeatherApi = async (token, city, country, units) => {
 		.catch((err) => console.log(err));
 };
 export const signinApi = async (token) => {
-	return await fetch("http://localhost:5000/signin", {
+	return await fetch("https://warm-ocean-58267.herokuapp.com/signin", {
 		method: "post",
 		headers: { "Content-Type": "application/json", Authorization: token },
 	})
@@ -23,7 +23,7 @@ export const signinApi = async (token) => {
 };
 
 export const initialSignInApi = async (email, password) => {
-	return await fetch("http://localhost:5000/signin", {
+	return await fetch("https://warm-ocean-58267.herokuapp.com/signin", {
 		method: "post",
 		headers: { "Content-Type": "application/json" },
 		body: JSON.stringify({
@@ -35,7 +35,7 @@ export const initialSignInApi = async (email, password) => {
 		.catch((err) => console.log(err));
 };
 export const initialRegisterApi = async (email, password, name) => {
-	return await fetch("http://localhost:5000/register", {
+	return await fetch("https://warm-ocean-58267.herokuapp.com/register", {
 		method: "post",
 		headers: { "Content-Type": "application/json" },
 		body: JSON.stringify({
