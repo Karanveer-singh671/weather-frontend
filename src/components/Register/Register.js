@@ -34,9 +34,7 @@ class Register extends React.Component {
     }
     initialRegisterApi(email, password,name)
       .then(data => {
-        console.log(data)
         if(data.token) {
-          console.log(data)
        	saveAuthTokenInSession(data.token)
           this.props.onRouteChange('home');
         } else {

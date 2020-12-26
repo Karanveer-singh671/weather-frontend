@@ -13,7 +13,7 @@ const initialState = {
   city: '',
   country: '',
   units: '',
-  route: routeTypes.signin,
+  route: routeTypes.register,
   isSignedIn: false,
   weather: {},
   errors: '',
