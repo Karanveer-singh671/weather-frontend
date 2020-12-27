@@ -8,8 +8,8 @@ If applicable, please provide the url where we can find and interact with your r
 [Weather-Application](https://thinkific-weather-app.herokuapp.com/)
 
 ### Time spent
-Time Frontend: ~ 6 - 7 hr
-Time Backend: ~ 8 hr
+Time Frontend: ~ 6 - 7 hr,
+Time Backend: ~ 8 hr,
 Deployment: ~ 2.5 - 3 hr
 ### Assumptions / Questions
 Use this section to tell us about any assumptions that you made when creating your solution.
