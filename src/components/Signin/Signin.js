@@ -1,18 +1,18 @@
 import React from "react";
-import {initialSignInApi} from "../../api/api"
-import {saveAuthTokenInSession} from "../../utils/utils"
+import { initialSignInApi } from "../../api/api";
+import { saveAuthTokenInSession } from "../../utils/utils";
 class Signin extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			signInEmail: "",
 			signInPassword: "",
-			errors: '',
+			errors: "",
 		};
 	}
-  clearErrors = () => {
-		this.setState({ errors: ''})
-	}
+	clearErrors = () => {
+		this.setState({ errors: "" });
+	};
 	onEmailChange = (event) => {
 		this.setState({ signInEmail: event.target.value });
 	};
@@ -22,15 +22,15 @@ class Signin extends React.Component {
 	};
 
 	onSubmitSignIn = () => {
-		this.clearErrors()
-		const {signInEmail, signInPassword} = this.state
-		initialSignInApi(signInEmail,signInPassword )
+		this.clearErrors();
+		const { signInEmail, signInPassword } = this.state;
+		initialSignInApi(signInEmail, signInPassword)
 			.then((data) => {
-				if (data.user && data.user.id && data.success === 'true') {
-					saveAuthTokenInSession(data.token)
+				if (data.user && data.token) {
+					saveAuthTokenInSession(data.token);
 					this.props.onRouteChange("home");
 				} else {
-					this.setState({errors: 'Wrong Credentials'})
+					this.setState({ errors: "Wrong Credentials" });
 				}
 			})
 			.catch((err) => console.log(err));
@@ -38,7 +38,7 @@ class Signin extends React.Component {
 
 	render() {
 		const { onRouteChange } = this.props;
-		const {errors} = this.state
+		const { errors } = this.state;
 		return (
 			<article className="br3 ba b--black-10 mv4 w-100 w-50-m w-25-l mw6 shadow-5 center">
 				<main className="pa4 black-80">
@@ -86,8 +86,7 @@ class Signin extends React.Component {
 							>
 								Register
 							</p>
-								 {errors ? <div>{errors}</div>: null}
-
+							{errors ? <div>{errors}</div> : null}
 						</div>
 					</div>
 				</main>

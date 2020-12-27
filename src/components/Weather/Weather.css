@@ -1,11 +1,9 @@
 .weather {
-  /* background-image: url("../../assets/04d.png"); */
   background-color: #cccccc;
   height: 500px;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  /* background-position: 50% 80%; */
 }
 .weather-text {
   text-align: center;

@@ -2,7 +2,7 @@ const routeTypes = {
 	home: "home",
 	signin: "signin",
 	signout: "signout",
-	register: "register"
+	register: "register",
 };
 
 export default routeTypes;

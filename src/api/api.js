@@ -43,6 +43,5 @@ export const initialRegisterApi = async (email, password, name) => {
 			password,
 			name,
 		}),
-	})
-		.then((response) => response.json())
+	}).then((response) => response.json());
 };
