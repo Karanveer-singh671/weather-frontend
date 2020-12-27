@@ -5,26 +5,24 @@ class Signin extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			signInEmail: "",
-			signInPassword: "",
+			email: "",
+			password: "",
 			errors: "",
 		};
 	}
 	clearErrors = () => {
 		this.setState({ errors: "" });
 	};
-	onEmailChange = (event) => {
-		this.setState({ signInEmail: event.target.value });
-	};
 
-	onPasswordChange = (event) => {
-		this.setState({ signInPassword: event.target.value });
+	onInputChange = (event) => {
+		const { value, name } = event.target;
+		this.setState({ [name]: value });
 	};
 
 	onSubmitSignIn = () => {
 		this.clearErrors();
-		const { signInEmail, signInPassword } = this.state;
-		initialSignInApi(signInEmail, signInPassword)
+		const { email, password } = this.state;
+		initialSignInApi(email, password)
 			.then((data) => {
 				if (data.user && data.token) {
 					saveAuthTokenInSession(data.token);
@@ -52,9 +50,9 @@ class Signin extends React.Component {
 								<input
 									className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
 									type="email"
-									name="email-address"
+									name="email"
 									id="email-address"
-									onChange={this.onEmailChange}
+									onChange={this.onInputChange}
 								/>
 							</div>
 							<div className="mv3">
@@ -66,7 +64,7 @@ class Signin extends React.Component {
 									type="password"
 									name="password"
 									id="password"
-									onChange={this.onPasswordChange}
+									onChange={this.onInputChange}
 								/>
 							</div>
 						</fieldset>

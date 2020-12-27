@@ -15,17 +15,12 @@ class Register extends React.Component {
 	clearErrors = () => {
 		this.setState({ errors: "" });
 	};
-	onNameChange = (event) => {
-		this.setState({ name: event.target.value });
+
+	onInputChange = (event) => {
+		const { value, name } = event.target;
+		this.setState({ [name]: value });
 	};
 
-	onEmailChange = (event) => {
-		this.setState({ email: event.target.value });
-	};
-
-	onPasswordChange = (event) => {
-		this.setState({ password: event.target.value });
-	};
 	onSubmitSignIn = () => {
 		this.clearErrors();
 		const { email, password, name } = this.state;
@@ -65,7 +60,7 @@ class Register extends React.Component {
 									type="text"
 									name="name"
 									id="name"
-									onChange={this.onNameChange}
+									onChange={this.onInputChange}
 								/>
 							</div>
 							<div className="mt3">
@@ -75,9 +70,9 @@ class Register extends React.Component {
 								<input
 									className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
 									type="email"
-									name="email-address"
+									name="email"
 									id="email-address"
-									onChange={this.onEmailChange}
+									onChange={this.onInputChange}
 								/>
 							</div>
 							<div className="mv3">
@@ -89,7 +84,7 @@ class Register extends React.Component {
 									type="password"
 									name="password"
 									id="password"
-									onChange={this.onPasswordChange}
+									onChange={this.onInputChange}
 								/>
 							</div>
 						</fieldset>
